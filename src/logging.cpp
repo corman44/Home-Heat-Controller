@@ -1,4 +1,6 @@
 #include "logging.h"
+//#include <wiringPi.h>
+#include <foo.h>
 
 using namespace std;
 
@@ -7,7 +9,10 @@ string filename = "log1.log";
 int main(int argv, char* argc[])
 {
   Logger practice(filename);
-  string str = "HelloWorld111\n";
+  string str = "HelloWorld\n";
+  
+  wiringPiSetup();
+  
   //Purpose: Test the logging file creation
   //TODO create a file with a header
   practice.write(str);
